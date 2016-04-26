@@ -141,3 +141,7 @@ class User(models.Model):
     password = models.CharField(max_length=20)
     post = models.ForeignKey(UserPost)
     order = models.ForeignKey(Order) #доработать чуть-чуть
+    class Meta:
+        managed = False
+        db_tablespace = 'torest_db'
+        db_table = 'dbuser'
