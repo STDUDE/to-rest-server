@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'webapp.apps.WebappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,17 +79,26 @@ WSGI_APPLICATION = 'Server.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default' : { },
-    'torest_db': {
+    'default' : {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbhmn56tqma00m',
+        'NAME': 'd6b8qfejkjirou',
         'HOST': 'ec2-23-21-165-201.compute-1.amazonaws.com',
-        'USER': 'wxbtqdfxrwuber',
-        'PASSWORD': 'yVb-pF_9H-NncvdTw8A3r9kQsv',
+        'USER': 'ezffknabjcxjqm',
+        'PASSWORD': 'Of7Mi_NYUcKKFAeafp7rGYoSKx',
         'PORT': '5432',
-    }
+    },
 }
 
+#
+# Connection info string:
+#   "dbname=d6b8qfejkjirou host=ec2-54-221-214-162.compute-1.amazonaws.com port=5432 user=ezffknabjcxjqm password=Of7Mi_NYUcKKFAeafp7rGYoSKx sslmode=require"
+# Connection URL:
+#    postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou
+#
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config(default='postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou')
+DATABASES['default'] = dj_database_url.parse('postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou', conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

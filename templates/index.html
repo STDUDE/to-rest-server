@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+    <TITLE>
+        Countries details
+    </TITLE>
+</HEAD>
+<BODY>
+    <H1>COUNTRIES:</H1>
+{% for detail in countries %}
+    <H1>{{ detail.id_country }} : {{ detail.country }}</H1>
+{% endfor %}
+</BODY>
+
+</HTML>
