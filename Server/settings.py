@@ -89,13 +89,6 @@ DATABASES = {
     },
 }
 
-#
-# Connection info string:
-#   "dbname=d6b8qfejkjirou host=ec2-54-221-214-162.compute-1.amazonaws.com port=5432 user=ezffknabjcxjqm password=Of7Mi_NYUcKKFAeafp7rGYoSKx sslmode=require"
-# Connection URL:
-#    postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou
-#
-
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config(default='postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou')
 DATABASES['default'] = dj_database_url.parse('postgres://ezffknabjcxjqm:Of7Mi_NYUcKKFAeafp7rGYoSKx@ec2-54-221-214-162.compute-1.amazonaws.com:5432/d6b8qfejkjirou', conn_max_age=600)

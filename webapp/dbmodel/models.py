@@ -8,6 +8,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from webapp.dbmodel.management import *
 
 class Address(models.Model):
     address_id = models.AutoField(primary_key=True)
@@ -196,6 +197,8 @@ class Region(models.Model):
     region_id = models.AutoField(primary_key=True)
     region = models.CharField(max_length=45)
     country = models.ForeignKey(Country, models.DO_NOTHING)
+    regions = models.Manager()
+    regions_ = RegionManager()
 
     class Meta:
         managed = False
