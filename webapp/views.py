@@ -13,4 +13,5 @@ def home_page(request):
 def countries(request):
     countries_info = Country.objects.all()
     print(countries_info)
+
     return TemplateResponse(request, 'index.html', {"countries": countries_info})
