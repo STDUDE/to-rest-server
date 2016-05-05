@@ -16,7 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from webapp import errors
+
 urlpatterns = [
     url(r'^webapp/', include('webapp.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+handler404 = errors.page_not_found

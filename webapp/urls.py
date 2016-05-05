@@ -8,3 +8,4 @@ urlpatterns = [
     url(r'^countries/', views.countries, name='countries'),
     url(r'^webservice/', include('webapp.webservice.urls')),
 ]
+

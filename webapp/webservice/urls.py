@@ -8,3 +8,4 @@ urlpatterns = [
     url(r'^regions/(?P<country_id>[0-9]{6})/$', views.countries, name='regions'),
     url(r'^cities/(?P<region_id>[0-9]{6})', views.countries, name='cities'),
 ]
+
