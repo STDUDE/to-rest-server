@@ -9,8 +9,7 @@ class CountriesReq(View):
     model = Country
     def get(self, request, *args, **kwargs):
         print("GET REQ CALLED")
-        request = json.loads(request.GET.body)
-        if request['req'] is 'country':
+        if True:
             return JsonResponse({
                 'message': 'Bad Request',
                 'status': 'error'
