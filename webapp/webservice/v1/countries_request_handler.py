@@ -9,7 +9,6 @@ from webapp.webservice.v1.request_handler import RequestHandler
 
 
 class CountriesReqHandler(View):
-    model = Country
 
     def get(self, request, *args, **kwargs):
         print("GET REQ CALLED")
