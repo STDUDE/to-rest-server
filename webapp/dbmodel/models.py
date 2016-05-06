@@ -8,6 +8,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from setuptools.compat import unicode
+
 from webapp.dbmodel.management import *
 
 class Address(models.Model):
@@ -47,8 +49,10 @@ class Country(models.Model):
     def __unicode__(self):
         return "/%s/" % self.country
 
-    def get_name(self):
-        return "/%s/" % self.country
+    def as_json(self):
+        return dict(
+            id=self.id_country,
+            country=self.country)
 
     def is_true(self):
         if self.id_country > 400:
